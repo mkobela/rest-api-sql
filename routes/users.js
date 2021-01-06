@@ -24,7 +24,7 @@ router.post("/", utility.asyncHandler(async(req, res, next) => {
   try {
     await User.create(req.body);
     res.setHeader('Location', "/");
-    res.status(201).json({ "message": "Account successfully created!" });
+    res.status(201).end();
   } catch (error) {
     utility.handleException(res, error);
   }
